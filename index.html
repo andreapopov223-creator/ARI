@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050609">
+    <title>ARI — AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app">
+
+        <header class="status">
+            <span class="status-dot"></span>
+            <span id="statusText">ARI спит</span>
+        </header>
+
+        <button class="voice-button" id="voiceButton">
+    <svg class="pulse-wave" viewBox="0 0 200 60"
+     xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M 5 30
+           C 25 30, 30 30, 45 30
+           C 60 30, 65 12, 80 12
+           C 95 12, 100 48, 115 48
+           C 130 48, 135 30, 150 30
+           C 165 30, 175 30, 195 30"
+        fill="none"
+        stroke="#78baff"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
+        </button>
+
+        <section class="chat" id="chat">
+            <div class="chat-messages" id="messages">
+                <div class="message ari-message">
+                    Привет! Я ARI. Чем могу помочь?
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <input id="messageInput" type="text"
+                    placeholder="Напиши ARI...">
+                <button id="sendButton">↑</button>
+            </div>
+        </section>
+
+        <nav class="bottom-menu">
+    <button data-page="subscription">Подписка</button>
+    <button data-page="files">Файлы</button>
+    <button data-page="apps">Приложения</button>
+    <button data-page="profile">Профиль</button>
+</nav>
+
+<section class="page-screen" id="pageScreen">
+    <button class="back-button" id="backButton">← Назад</button>
+    <h2 id="pageTitle"></h2>
+<p id="pageDescription"></p>
+<!-- ARI FILES -->
+
+<div class="files-content" id="filesContent">
+
+    <div class="files-header">
+        <h3>Мои файлы</h3>
+        <p>Загружай документы для работы с ARI</p>
+    </div>
+
+    <label class="file-upload" for="fileInput">
+        <div class="upload-icon">＋</div>
+        <h3>Добавить файл</h3>
+        <p>Нажми, чтобы выбрать документ</p>
+        <span>PDF · DOCX · TXT · PNG · JPG</span>
+    </label>
+
+    <input
+        type="file"
+        id="fileInput"
+        multiple
+        accept=".pdf,.doc,.docx,.txt,.csv,.xlsx,.png,.jpg,.jpeg"
+        hidden
+    >
+
+    <div class="files-list">
+        <h3>Загруженные файлы</h3>
+
+        <div id="fileList">
+            <p class="empty-files">
+                Пока здесь пусто
+            </p>
+        </div>
+    </div>
+
+</div>
+<div class="subscription-content" id="subscriptionContent">
+
+    <div class="subscription-card free">
+        <span class="tariff-label">БАЗОВЫЙ</span>
+        <h3>ARI Free</h3>
+        <div class="tariff-price">0 € <small>/ месяц</small></div>
+        <p>Начни знакомство с ARI.</p>
+        <ul>
+            <li>Текстовый ИИ-чат</li>
+            <li>Базовая память</li>
+            <li>Ограниченное количество запросов</li>
+        </ul>
+        <button class="tariff-button">Текущий тариф</button>
+    </div>
+
+    <div class="subscription-card plus">
+        <span class="tariff-label">РАСШИРЕННЫЙ</span>
+        <h3>ARI Plus</h3>
+        <div class="tariff-price">5,99 € <small>/ месяц</small></div>
+        <p>Больше возможностей каждый день.</p>
+        <ul>
+            <li>Расширенный ИИ-чат</li>
+            <li>Улучшенная память</li>
+            <li>Работа с файлами</li>
+            <li>Голосовое общение</li>
+        </ul>
+        <button class="tariff-button">Выбрать Plus</button>
+    </div>
+
+    <div class="subscription-card pro">
+        <span class="tariff-label">МАКСИМАЛЬНЫЙ</span>
+        <h3>ARI Pro</h3>
+        <div class="tariff-price">12,99 € <small>/ месяц</small></div>
+        <p>Максимум возможностей ARI.</p>
+        <ul>
+            <li>Продвинутые ИИ-возможности</li>
+            <li>Расширенная память</li>
+            <li>Приоритетная обработка</li>
+            <li>Все доступные инструменты</li>
+        </ul>
+        <button class="tariff-button">Выбрать Pro</button>
+    </div>
+
+</div>
+
+<div class="profile-content" id="profileContent">
+
+    <div class="profile-card">
+        <div class="profile-avatar">A</div>
+        <h3 id="profileName">Пользователь ARI</h3>
+        <p id="profileUsername">@username</p>
+        <span class="profile-id">Telegram ID: ожидает подключения</span>
+    </div>
+
+    <div class="profile-card">
+        <span class="profile-label">МОЯ ПОДПИСКА</span>
+        <h3>ARI Free</h3>
+        <p>Базовый тариф</p>
+    </div>
+
+    <div class="profile-card">
+        <span class="profile-label">НАСТРОЙКИ</span>
+        <button class="profile-option">Язык приложения <span>Русский →</span></button>
+        <button class="profile-option">Голос ARI <span>Настроить →</span></button>
+        <button class="profile-option">Память ARI <span>Управление →</span></button>
+    </div>
+
+    <div class="profile-card">
+        <span class="profile-label">АККАУНТ</span>
+        <button class="profile-option">Конфиденциальность →</button>
+        <button class="profile-option">Управление данными →</button>
+    </div>
+
+</div>
+
+<div class="apps-content" id="appsContent">
+
+    <div class="apps-header">
+        <h3>Инструменты ARI</h3>
+        <p>Выбери, чем займёмся сегодня</p>
+    </div>
+
+    <div class="app-card">
+        <div class="app-icon">🧠</div>
+        <div class="app-info">
+            <h3>ИИ-помощник</h3>
+            <p>Умный помощник для любых задач</p>
+        </div>
+        <span class="app-arrow">→</span>
+    </div>
+
+    <div class="app-card">
+        <div class="app-icon">🌐</div>
+        <div class="app-info">
+            <h3>Поиск в интернете</h3>
+            <p>Поиск информации и материалов</p>
+        </div>
+        <span class="app-arrow">→</span>
+    </div>
+
+    <div class="app-card">
+        <div class="app-icon">📄</div>
+        <div class="app-info">
+            <h3>Анализ документов</h3>
+            <p>Изучение PDF, DOCX и других файлов</p>
+        </div>
+        <span class="app-arrow">→</span>
+    </div>
+
+    <div class="app-card">
+        <div class="app-icon">✍️</div>
+        <div class="app-info">
+            <h3>Генератор текстов</h3>
+            <p>Письма, идеи, статьи и описания</p>
+        </div>
+        <span class="app-arrow">→</span>
+    </div>
+
+    <div class="app-card">
+        <div class="app-icon">💻</div>
+        <div class="app-info">
+            <h3>Программист</h3>
+            <p>Написание и объяснение кода</p>
+        </div>
+        <span class="app-arrow">→</span>
+    </div>
+
+    <div class="app-card">
+        <div class="app-icon">🌍</div>
+        <div class="app-info">
+            <h3>Переводчик</h3>
+            <p>Перевод текста на разные языки</p>
+        </div>
+        <span class="app-arrow">→</span>
+    </div>
+
+</div>
+
+</section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

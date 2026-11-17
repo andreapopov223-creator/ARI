@@ -649,3 +649,31 @@ body {
     font-size: 23px;
 }
 
+/* ARI bottom menu icons */
+
+.bottom-menu button {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: #60a5fa;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.bottom-menu button svg {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.bottom-menu button:active {
+    background: rgba(75, 135, 255, 0.18);
+}

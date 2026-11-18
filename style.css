@@ -701,3 +701,47 @@ body {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+
+
+/* ARI neon navigation buttons */
+
+.bottom-menu button {
+    flex: 1;
+    min-width: 0;
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 5px 2px;
+    border: none;
+    border-right: 1px solid rgba(70, 140, 255, 0.3);
+    border-radius: 0;
+
+    background: transparent;
+    color: #dce8ff;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.bottom-menu button:last-child {
+    border-right: none;
+}
+
+.bottom-menu button svg {
+    width: 29px !important;
+    height: 29px !important;
+    fill: #247cff !important;
+    stroke: #55a5ff !important;
+    stroke-width: 1.5;
+    filter: drop-shadow(0 0 5px #087bff);
+}
+
+.bottom-menu button span {
+    display: block;
+    font-size: 14px;
+    white-space: nowrap;
+    text-shadow: 0 0 8px rgba(50, 130, 255, 0.7);
+}

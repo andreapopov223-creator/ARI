@@ -118,7 +118,6 @@ document.querySelectorAll(".bottom-menu button").forEach(button => {
 
         voiceSection.style.display = "none";
         status.style.display = "none";
-        bottomMenu.style.display = "none";
     });
 });
 

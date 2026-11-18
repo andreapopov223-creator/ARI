@@ -193,26 +193,41 @@ body {
     font-size: 20px;
 }
 
+
 .bottom-menu {
     position: fixed;
-    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(28px + env(safe-area-inset-bottom, 0px));
     left: 50%;
     transform: translateX(-50%);
+
     width: calc(100% - 30px);
-    max-width: 480px;
-    min-height: 62px;
+    max-width: 620px;
+    min-height: 76px;
+
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 3px;
-    padding: 8px 5px;
-    border: 1px solid rgba(75, 135, 255, 0.2);
-    border-radius: 35px;
-    background: rgba(12, 19, 34, 0.88);
-    box-shadow: 0 0 35px rgba(0, 75, 255, 0.12);
-    backdrop-filter: blur(15px);
+    gap: 0;
+
+    padding: 10px 8px;
+
+    border: 1px solid rgba(45, 125, 255, 0.95);
+    border-radius: 45px;
+
+    background: rgba(3, 7, 20, 0.94);
+
+    box-shadow:
+        0 0 8px #087bff,
+        0 0 20px rgba(0, 100, 255, 0.8),
+        0 0 45px rgba(0, 75, 255, 0.5),
+        inset 0 0 18px rgba(0, 75, 255, 0.15);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
     z-index: 10;
 }
+
 
 .bottom-menu button {
     flex: 1;
